@@ -1,0 +1,15 @@
+p {
+  color: green;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.highlight {
+  background-color: yellow;
+  padding: 5px;
+}
+
+#main-title {
+  font-size: 24px;
+  color: blue;
+}

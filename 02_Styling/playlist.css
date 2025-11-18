@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin: 40px;
+  background-color: #f2f2f2;
+  text-align: center; /* כל התוכן באמצע */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* מרכז את הטבלה */
+}
+
+thead tr {
+  background-color: #007bff;
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #aaa; /* קווי grid */
+  text-align: center; /* תוכן באמצע */
+}
+
+img {
+  width: 80px;
+  border-radius: 8px;
+}
+
+iframe {
+  border-radius: 8px;
+}
+
+.playlist-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #007bff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
