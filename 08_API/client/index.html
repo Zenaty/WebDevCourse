@@ -1,0 +1,118 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Songs CRUD + Upload Demo</title>
+
+    <!-- Bootswatch Cosmo theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/cosmo/bootstrap.min.css"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary mb-4">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Songs CRUD Demo</span>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- FORM (Create / Edit) -->
+      <div class="card mb-4">
+        <div class="card-header">Song Form</div>
+        <div class="card-body">
+          <form id="songForm">
+            <input type="hidden" id="songId" />
+
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" required />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Artist</label>
+                <input type="text" class="form-control" id="artist" required />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Year</label>
+                <input type="number" class="form-control" id="year" required />
+              </div>
+            </div>
+
+            <!-- FILE input – used later in UPLOAD STEP -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">MP3 File (upload later)</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="file"
+                  accept="audio/mpeg"
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" id="saveBtn">
+              Save
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelEditBtn">
+              Cancel Edit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SEARCH (Querystring demo) -->
+      <div class="card mb-4">
+        <div class="card-header">Search (Querystring API)</div>
+        <div class="card-body">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Artist contains</label>
+              <input type="text" class="form-control" id="searchArtist" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Min Year</label>
+              <input type="number" class="form-control" id="searchMinYear" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Max Year</label>
+              <input type="number" class="form-control" id="searchMaxYear" />
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary w-100" id="searchBtn">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="card">
+        <div class="card-header">Songs List</div>
+        <div class="card-body">
+          <table class="table table-striped" id="songsTable">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Year</th>
+                <th>Audio</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- rows injected by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -89,6 +89,7 @@ function saveAndRender() {
   localStorage.setItem("songs", JSON.stringify(songs));
   // TODO RELOAD UI
   renderSongs();
+  document.getElementById("songId").value = "";
 }
 
 function renderSongs() {
