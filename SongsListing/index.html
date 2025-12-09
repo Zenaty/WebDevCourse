@@ -14,7 +14,9 @@
   </head>
   <body class="p-4">
     <div class="container">
-      <h1 class="text-center text-primary mb-4">🎵 Excercise Songs List</h1>
+      <h1 class="text-center text-primary mb-4">
+        🎵 Excercise Songs List - Or Zenaty
+      </h1>
 
       <div class="card border-primary mb-4">
         <div class="card-body">
@@ -40,6 +42,16 @@
               />
             </div>
             <div class="col-md-2">
+              <input
+                id="rating"
+                type="number"
+                class="form-control"
+                placeholder="Rate 1-10"
+                min="1"
+                max="10"
+              />
+            </div>
+            <div class="col-md-2">
               <button
                 type="submit"
                 id="submitBtn"
@@ -59,23 +71,60 @@
           class="form-control w-50"
           placeholder="Search..."
         />
-        <select id="sort" class="form-select w-25">
-          <option value="newest">Newest First</option>
-          <option value="az">A-Z</option>
-        </select>
+        <div class="d-flex gap-3 mb-3">
+          <label>
+            <input type="radio" name="sortBy" value="date" checked /> Date Added
+          </label>
+
+          <label>
+            <input type="radio" name="sortBy" value="title" /> Title (A-Z)
+          </label>
+
+          <label>
+            <input type="radio" name="sortBy" value="rating" /> Rating
+          </label>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mb-3">
+        <button id="toggleViewBtn" class="btn btn-outline-info">
+          Toggle View
+        </button>
       </div>
 
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Title(By User)</th>
+            <th>Title(By Youtube)</th>
+            <th>Thumb</th>
             <th>Link</th>
+            <th>Rating</th>
             <th class="text-end">Actions</th>
           </tr>
         </thead>
         <tbody id="songList"></tbody>
       </table>
+
+      <!-- YOUTUBE PLAYER MODAL -->
+      <div class="modal fade" id="playerModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <iframe
+              id="playerFrame"
+              width="100%"
+              height="450"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARDS VIEW -->
+      <div id="cardsView" class="row d-none"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
